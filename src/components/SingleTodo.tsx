@@ -15,9 +15,9 @@ const SingleTodo: React.FC<{
   const [editTodo, setEditTodo] = useState<string>(todo.todo);
 
   const inputRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, [edit]);
+  // useEffect(() => {
+  //   inputRef.current?.focus();
+  // }, [edit]);
 
   const handleEdit = (e: React.FormEvent, id: number) => {
     e.preventDefault();
@@ -68,6 +68,7 @@ const SingleTodo: React.FC<{
                 if (!edit && !todo.isDone) {
                   setEdit(!edit);
                 }
+                inputRef.current?.focus();
               }}
             >
               <AiFillEdit />
